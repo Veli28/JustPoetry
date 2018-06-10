@@ -14,13 +14,13 @@ public class Poet {
     private String name;
 
     @ColumnInfo(name = "favourite")
-    private int favourite;
+    private int favourite = 0;
 
 
     public Poet() {
     }
 
-    public Poet(int id, String name, char favourite) {
+    public Poet(int id, String name, int favourite) {
         this.id = id;
         this.name = name;
         this.favourite = favourite;

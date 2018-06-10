@@ -25,6 +25,13 @@ public class PoetsFragment extends Fragment {
 
     private View.OnClickListener favouriteClickListener = v -> {
         Poet poet = (Poet) v.getTag();
+
+        if (poet.getFavourite() == 1) {
+            poet.setFavourite(0);
+        } else {
+            poet.setFavourite(1);
+        }
+
         poetsViewModel.updatePoet(poet);
     };
 

@@ -31,12 +31,10 @@ public class PoetsAdapter extends RecyclerView.Adapter<PoetsViewHolder> {
     public void onBindViewHolder(PoetsViewHolder holder, int position) {
         Poet item = poetsList.get(position);
 
-        if (item.getFavourite() != 1) {
-            item.setFavourite(1);
-            holder.addToFavouritesButton.setImageResource(R.drawable.ic_add_to_favourites);
-        } else {
-            item.setFavourite(0);
+        if (item.getFavourite() == 1) {
             holder.addToFavouritesButton.setImageResource(R.drawable.ic_favourite);
+        } else {
+            holder.addToFavouritesButton.setImageResource(R.drawable.ic_add_to_favourites);
         }
 
         holder.poetsNameTextView.setText(item.getName());
